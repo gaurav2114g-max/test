@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gaurav Gole | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gaurav Gole | AI Portfolio</title>
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -14,253 +18,295 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: 'Segoe UI', sans-serif;
+      font-family:'Poppins',sans-serif;
       scroll-behavior:smooth;
     }
 
     body{
-      background:#f4f7fb;
-      color:#222;
+      background:#050816;
+      color:white;
       overflow-x:hidden;
     }
 
-    /* HEADER */
+    /* CUSTOM CURSOR */
+
+    .cursor{
+      width:20px;
+      height:20px;
+      border:2px solid #00f7ff;
+      border-radius:50%;
+      position:fixed;
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+      z-index:9999;
+      transition:0.1s;
+      box-shadow:0 0 20px #00f7ff;
+    }
+
+    /* BACKGROUND */
+
+    .bg-animation{
+      position:fixed;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      z-index:-1;
+    }
+
+    .bg-animation span{
+      position:absolute;
+      display:block;
+      width:5px;
+      height:5px;
+      background:#00f7ff;
+      border-radius:50%;
+      animation:animate 15s linear infinite;
+      bottom:-150px;
+      opacity:0.5;
+    }
+
+    @keyframes animate{
+      0%{
+        transform:translateY(0) scale(0);
+      }
+      100%{
+        transform:translateY(-1200px) scale(2);
+      }
+    }
 
     header{
       width:100%;
-      min-height:100vh;
-      background:linear-gradient(rgba(15,23,42,0.88), rgba(30,58,138,0.88)),
-      url("WhatsApp Image 2026-05-28 at 1.57.31 PM.jpeg");
-      background-size:cover;
-      background-position:center;
+      height:100vh;
       display:flex;
-      align-items:center;
       justify-content:center;
+      align-items:center;
+      position:relative;
       text-align:center;
       padding:20px;
-      color:#fff;
     }
 
     .hero{
-      max-width:900px;
-      animation:fadeIn 1.5s ease;
+      max-width:1000px;
+      animation:fadeIn 2s ease;
+    }
+
+    .hero img{
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #00f7ff;
+      box-shadow:0 0 50px #00f7ff;
+      margin-bottom:30px;
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
     }
 
     .hero h1{
-      font-size:65px;
+      font-size:75px;
       margin-bottom:10px;
-      letter-spacing:2px;
+      background:linear-gradient(to right,#00f7ff,#8a2be2);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
     }
 
     .hero h2{
       font-size:30px;
-      color:#fbbf24;
       margin-bottom:20px;
-      font-weight:500;
+      color:#d1d5db;
     }
 
     .hero p{
+      max-width:850px;
+      margin:auto;
+      line-height:1.9;
+      color:#9ca3af;
       font-size:18px;
-      line-height:1.8;
-      margin-bottom:30px;
+    }
+
+    .hero-btns{
+      margin-top:35px;
     }
 
     .hero-btns a{
-      text-decoration:none;
-      margin:10px;
       display:inline-block;
-      padding:14px 32px;
+      margin:10px;
+      padding:15px 35px;
       border-radius:40px;
-      font-weight:bold;
+      text-decoration:none;
+      font-weight:600;
       transition:0.4s;
     }
 
-    .btn-primary{
-      background:#f59e0b;
+    .btn1{
+      background:linear-gradient(135deg,#00f7ff,#8a2be2);
       color:white;
+      box-shadow:0 0 25px rgba(0,247,255,0.5);
     }
 
-    .btn-primary:hover{
-      background:#ffb703;
-      transform:translateY(-3px);
+    .btn1:hover{
+      transform:translateY(-5px) scale(1.05);
     }
 
-    .btn-secondary{
-      border:2px solid white;
-      color:white;
+    .btn2{
+      border:2px solid #00f7ff;
+      color:#00f7ff;
     }
 
-    .btn-secondary:hover{
-      background:white;
-      color:#1e3a8a;
+    .btn2:hover{
+      background:#00f7ff;
+      color:#050816;
     }
-
-    /* NAVBAR */
 
     nav{
+      width:100%;
+      padding:18px;
+      background:rgba(255,255,255,0.05);
+      backdrop-filter:blur(10px);
       position:sticky;
       top:0;
       z-index:1000;
-      background:white;
-      padding:18px;
       text-align:center;
-      box-shadow:0 2px 10px rgba(0,0,0,0.08);
     }
 
     nav a{
+      color:white;
       text-decoration:none;
-      margin:0 15px;
-      color:#1e3a8a;
-      font-weight:600;
+      margin:0 20px;
+      font-weight:500;
       transition:0.3s;
     }
 
     nav a:hover{
-      color:#f59e0b;
+      color:#00f7ff;
     }
-
-    /* COMMON */
 
     section{
-      padding:90px 10%;
+      padding:100px 10%;
     }
 
-    .section-title{
+    .title{
       text-align:center;
       margin-bottom:60px;
     }
 
-    .section-title h2{
-      font-size:42px;
-      color:#1e3a8a;
+    .title h2{
+      font-size:50px;
       margin-bottom:10px;
+      color:#00f7ff;
     }
 
-    .section-title p{
-      color:#666;
-      font-size:17px;
+    .title p{
+      color:#9ca3af;
+    }
+
+    /* GLASS CARD */
+
+    .glass{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(12px);
+      border-radius:25px;
+      padding:40px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.2);
     }
 
     /* ABOUT */
 
-    .about-container{
+    .about{
       display:grid;
-      grid-template-columns:1fr 2fr;
+      grid-template-columns:1fr 1.5fr;
       gap:40px;
       align-items:center;
     }
 
-    .profile-card{
-      background:white;
-      padding:30px;
-      border-radius:20px;
-      text-align:center;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    .profile-card img{
-      width:230px;
-      height:230px;
-      object-fit:cover;
-      border-radius:50%;
-      border:6px solid #1e3a8a;
-      margin-bottom:20px;
-    }
-
-    .profile-card h3{
-      font-size:30px;
-      color:#1e3a8a;
-    }
-
-    .profile-card p{
-      margin-top:10px;
-      color:#555;
-      font-size:17px;
-    }
-
-    .about-text{
-      background:white;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    .about-text p{
-      margin-bottom:20px;
-      line-height:1.9;
-      color:#444;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-box{
-      background:linear-gradient(135deg,#1e3a8a,#0f172a);
-      padding:60px;
+    .about img{
+      width:100%;
       border-radius:25px;
-      text-align:center;
-      color:white;
+      box-shadow:0 0 40px rgba(0,247,255,0.3);
     }
 
-    .counter{
-      font-size:85px;
-      font-weight:bold;
-      color:#fbbf24;
+    .about p{
+      line-height:1.9;
+      color:#d1d5db;
+      margin-bottom:20px;
     }
 
     /* SKILLS */
 
-    .skills-grid{
+    .skills{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:25px;
     }
 
     .skill-card{
-      background:white;
-      padding:35px;
-      border-radius:20px;
       text-align:center;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
       transition:0.4s;
     }
 
     .skill-card:hover{
-      transform:translateY(-10px);
+      transform:translateY(-10px) rotateX(5deg);
     }
 
     .skill-card i{
-      font-size:40px;
-      color:#1e3a8a;
+      font-size:45px;
       margin-bottom:20px;
+      color:#00f7ff;
     }
 
     .skill-card h3{
       margin-bottom:15px;
-      color:#1e3a8a;
+    }
+
+    .skill-card p{
+      color:#cbd5e1;
+    }
+
+    /* EXPERIENCE */
+
+    .exp-box{
+      text-align:center;
+      padding:60px;
+    }
+
+    .counter{
+      font-size:100px;
+      font-weight:bold;
+      color:#00f7ff;
+      text-shadow:0 0 20px #00f7ff;
     }
 
     /* TIMELINE */
 
     .timeline{
       display:grid;
-      gap:25px;
+      gap:30px;
     }
 
     .job{
-      background:white;
-      padding:35px;
-      border-radius:20px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.4s;
+    }
+
+    .job:hover{
+      transform:scale(1.02);
     }
 
     .job h3{
-      color:#1e3a8a;
+      color:#00f7ff;
       margin-bottom:10px;
     }
 
     .job span{
-      color:#f59e0b;
-      font-weight:bold;
+      color:#fbbf24;
       display:block;
       margin-bottom:15px;
     }
@@ -268,61 +314,56 @@
     .job ul{
       padding-left:18px;
       line-height:1.8;
+      color:#d1d5db;
     }
 
     /* CONTACT */
 
-    .contact-box{
-      background:white;
-      padding:50px;
-      border-radius:20px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    .contact{
       text-align:center;
     }
 
-    .contact-box p{
+    .contact p{
       margin:18px 0;
       font-size:18px;
+      color:#d1d5db;
     }
 
-    .contact-box i{
-      color:#1e3a8a;
-      margin-right:10px;
+    .social{
+      margin-top:30px;
     }
 
-    .social-links{
-      margin-top:25px;
-    }
-
-    .social-links a{
+    .social a{
+      width:55px;
+      height:55px;
+      line-height:55px;
       display:inline-block;
-      margin:10px;
-      width:50px;
-      height:50px;
-      line-height:50px;
       border-radius:50%;
-      background:#1e3a8a;
-      color:white;
-      font-size:20px;
-      transition:0.3s;
+      background:rgba(255,255,255,0.08);
+      color:#00f7ff;
+      margin:10px;
+      font-size:22px;
+      transition:0.4s;
+      box-shadow:0 0 20px rgba(0,247,255,0.2);
     }
 
-    .social-links a:hover{
-      background:#f59e0b;
-      transform:translateY(-5px);
+    .social a:hover{
+      transform:translateY(-8px) scale(1.1);
+      background:#00f7ff;
+      color:#050816;
     }
 
     footer{
-      background:#0f172a;
-      color:white;
       text-align:center;
-      padding:20px;
+      padding:25px;
+      background:#020617;
+      color:#9ca3af;
     }
 
     @keyframes fadeIn{
       from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(50px);
       }
       to{
         opacity:1;
@@ -333,23 +374,23 @@
     @media(max-width:768px){
 
       .hero h1{
-        font-size:42px;
+        font-size:45px;
       }
 
       .hero h2{
         font-size:22px;
       }
 
-      .about-container{
+      .about{
         grid-template-columns:1fr;
       }
 
       nav a{
         display:inline-block;
-        margin:8px;
+        margin:10px;
       }
 
-      .profile-card img{
+      .hero img{
         width:180px;
         height:180px;
       }
@@ -361,33 +402,53 @@
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- CURSOR -->
+
+  <div class="cursor"></div>
+
+  <!-- BACKGROUND PARTICLES -->
+
+  <div class="bg-animation">
+    <span style="left:10%; animation-duration:12s;"></span>
+    <span style="left:20%; animation-duration:18s;"></span>
+    <span style="left:35%; animation-duration:14s;"></span>
+    <span style="left:50%; animation-duration:20s;"></span>
+    <span style="left:65%; animation-duration:15s;"></span>
+    <span style="left:80%; animation-duration:22s;"></span>
+    <span style="left:90%; animation-duration:17s;"></span>
+  </div>
+
+  <!-- HERO -->
 
   <header>
 
     <div class="hero">
+
+      <img src="WhatsApp Image 2026-05-28 at 1.57.31 PM.jpeg" alt="Gaurav Gole">
 
       <h1>Gaurav Gole</h1>
 
       <h2>Accounts & Finance Executive</h2>
 
       <p>
-        Dedicated and detail-oriented Accounts & Finance professional with over 4 years of experience in accounting, taxation, payroll, financial reporting, and statutory compliance.
+        Dedicated Accounts & Finance Professional with 4+ years of experience in Accounting, GST, TDS, Payroll, Financial Reporting, HR Operations, and ERP Systems.
       </p>
 
       <div class="hero-btns">
-        <a href="#contact" class="btn-primary">Contact Me</a>
 
-        <a href="https://www.linkedin.com/in/gaurav-gole-681071260" target="_blank" class="btn-secondary">
+        <a href="#contact" class="btn1">Hire Me</a>
+
+        <a href="https://www.linkedin.com/in/gaurav-gole-681071260" target="_blank" class="btn2">
           LinkedIn
         </a>
+
       </div>
 
     </div>
 
   </header>
 
-  <!-- NAVBAR -->
+  <!-- NAVIGATION -->
 
   <nav>
 
@@ -403,35 +464,29 @@
 
   <section id="about">
 
-    <div class="section-title">
+    <div class="title">
       <h2>About Me</h2>
       <p>Professional Summary</p>
     </div>
 
-    <div class="about-container">
+    <div class="about">
 
-      <div class="profile-card">
-
-        <img src="WhatsApp Image 2026-05-28 at 1.57.31 PM.jpeg" alt="Gaurav Gole">
-
-        <h3>Gaurav Gole</h3>
-
-        <p>Accounts & Finance Executive</p>
-
+      <div class="glass">
+        <img src="WhatsApp Image 2026-05-28 at 1.57.31 PM.jpeg" alt="">
       </div>
 
-      <div class="about-text">
+      <div class="glass">
 
         <p>
-          I am an Accounts & Finance professional with expertise in bookkeeping, taxation, payroll management, banking reconciliation, statutory compliance, and financial reporting.
+          I am an Accounts & Finance professional with strong expertise in Bookkeeping, GST, TDS, Payroll, Banking Reconciliation, Financial Reporting, and HR Operations.
         </p>
 
         <p>
-          Currently working with Routa Digital India Pvt. Ltd., Noida, handling end-to-end accounting operations including GST, TDS, PF compliance, financial reporting, payroll management, and HR coordination.
+          Currently working at Routa Digital India Pvt. Ltd., Noida, managing end-to-end accounting operations, statutory compliances, employee payroll, financial reports, and HR processes.
         </p>
 
         <p>
-          I have also worked in a CA Firm where I managed accounting records, financial statements, invoicing, reconciliations, and GST/TDS return filing.
+          I believe in accuracy, compliance, problem-solving, and continuous learning to improve business financial operations.
         </p>
 
       </div>
@@ -444,47 +499,47 @@
 
   <section id="skills">
 
-    <div class="section-title">
-      <h2>Key Skills</h2>
+    <div class="title">
+      <h2>Skills</h2>
       <p>Technical & Professional Expertise</p>
     </div>
 
-    <div class="skills-grid">
+    <div class="skills">
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-calculator"></i>
         <h3>Accounting</h3>
-        <p>Bookkeeping, Ledger & Financial Transactions</p>
+        <p>Bookkeeping, Ledger & Financial Management</p>
       </div>
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-file-invoice-dollar"></i>
         <h3>GST & TDS</h3>
-        <p>GST, TDS, Income Tax & PF Compliance</p>
+        <p>Taxation & Statutory Compliance</p>
       </div>
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-money-check-dollar"></i>
         <h3>Payroll</h3>
-        <p>Payroll Processing & Salary Management</p>
+        <p>Payroll Processing & HRMS</p>
       </div>
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-chart-line"></i>
         <h3>Financial Reports</h3>
         <p>P&L, Balance Sheet & MIS Reporting</p>
       </div>
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-laptop"></i>
         <h3>Tally & Zoho</h3>
-        <p>Tally ERP, Tally Prime & Zoho Books</p>
+        <p>Tally ERP, Prime & Zoho Books</p>
       </div>
 
-      <div class="skill-card">
+      <div class="glass skill-card">
         <i class="fa-solid fa-file-excel"></i>
-        <h3>MS Office</h3>
-        <p>Advanced Excel, Word & PowerPoint</p>
+        <h3>MS Excel</h3>
+        <p>Advanced Excel & Data Analysis</p>
       </div>
 
     </div>
@@ -495,12 +550,12 @@
 
   <section id="experience">
 
-    <div class="section-title">
+    <div class="title">
       <h2>Experience</h2>
       <p>Professional Journey</p>
     </div>
 
-    <div class="experience-box">
+    <div class="glass exp-box">
 
       <div class="counter" id="counter">0</div>
 
@@ -514,40 +569,38 @@
 
   <section id="work">
 
-    <div class="section-title">
+    <div class="title">
       <h2>Work Experience</h2>
       <p>Career Timeline</p>
     </div>
 
     <div class="timeline">
 
-      <div class="job">
+      <div class="glass job">
 
         <h3>Executive – Accounts & Finance</h3>
 
         <span>Routa Digital India Pvt. Ltd. | July 2023 – Present</span>
 
         <ul>
-          <li>Managing bookkeeping, accounting records, and reconciliations</li>
-          <li>Handling GST, TDS, PF, and statutory compliances</li>
-          <li>Preparing financial reports, P&L, and Balance Sheet</li>
-          <li>Managing payroll processing and HR operations</li>
-          <li>Coordinating with CA firms and auditors</li>
+          <li>Managing GST, TDS, PF & statutory compliances</li>
+          <li>Preparing financial reports & reconciliations</li>
+          <li>Handling payroll & HR operations</li>
+          <li>Coordinating with auditors & CA firms</li>
         </ul>
 
       </div>
 
-      <div class="job">
+      <div class="glass job">
 
         <h3>Assistant Accountant</h3>
 
         <span>Sonu Ram & Associates | Oct 2021 – June 2023</span>
 
         <ul>
-          <li>Prepared financial reports and accounting statements</li>
-          <li>Managed invoicing and receivable/payable records</li>
-          <li>Posted journal entries and accounting transactions</li>
-          <li>Supported GST, TDS, and PF filing activities</li>
+          <li>Maintained accounting records & vouchers</li>
+          <li>Prepared invoices & financial statements</li>
+          <li>Supported GST, TDS & PF filing activities</li>
         </ul>
 
       </div>
@@ -560,32 +613,23 @@
 
   <section id="contact">
 
-    <div class="section-title">
-      <h2>Contact Me</h2>
+    <div class="title">
+      <h2>Contact</h2>
       <p>Let's Connect</p>
     </div>
 
-    <div class="contact-box">
+    <div class="glass contact">
 
-      <p>
-        <i class="fa-solid fa-phone"></i>
-        +91 8826788191
-      </p>
+      <p><i class="fa-solid fa-phone"></i> +91 8826788191</p>
 
-      <p>
-        <i class="fa-solid fa-envelope"></i>
-        Gaurav2114g@gmail.com
-      </p>
+      <p><i class="fa-solid fa-envelope"></i> Gaurav2114g@gmail.com</p>
 
-      <p>
-        <i class="fa-solid fa-location-dot"></i>
-        Shahdara, Delhi – 110093
-      </p>
+      <p><i class="fa-solid fa-location-dot"></i> Shahdara, Delhi – 110093</p>
 
-      <div class="social-links">
+      <div class="social">
 
         <a href="https://www.linkedin.com/in/gaurav-gole-681071260" target="_blank">
-          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="fa-brands fa-linkedin"></i>
         </a>
 
         <a href="mailto:Gaurav2114g@gmail.com">
@@ -602,9 +646,7 @@
 
   <footer>
 
-    <p>
-      © 2026 Gaurav Gole | Portfolio Website
-    </p>
+    <p>© 2026 Gaurav Gole | AI Portfolio Website</p>
 
   </footer>
 
@@ -633,6 +675,19 @@
       }
 
     }, 500);
+
+
+    // CUSTOM CURSOR
+
+    const cursor = document.querySelector(".cursor");
+
+    document.addEventListener("mousemove", (e) => {
+
+      cursor.style.left = e.pageX + "px";
+
+      cursor.style.top = e.pageY + "px";
+
+    });
 
   </script>
 

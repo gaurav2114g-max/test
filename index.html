@@ -1,5 +1,322 @@
-<html>
-  <body>
-    <h1>Gaurav</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav Gole | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #fff;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1e3c72;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #1e3c72;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #ff9800;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .profile-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .profile-box img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 5px solid #1e3c72;
+    }
+
+    .about-text {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .skill-card h3 {
+      color: #1e3c72;
+      margin-bottom: 10px;
+    }
+
+    .experience-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .counter {
+      font-size: 60px;
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact button {
+      background: #1e3c72;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #ff9800;
+    }
+
+    footer {
+      background: #1e3c72;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    @media(max-width: 768px) {
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Gaurav Gole</h1>
+    <p>Accounts and Finance Executive</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+      <div class="profile-box">
+        <img src="https://via.placeholder.com/150" alt="Profile Image">
+        <h3>Gaurav Gole</h3>
+        <p>Finance Professional</p>
+      </div>
+
+      <div class="about-text">
+        <p>
+          I am an experienced Accounts and Finance Executive with more than 4 years of professional experience in accounting, finance operations, taxation, payroll management, GST filing, TDS compliance, and financial reporting.
+        </p>
+
+        <br>
+
+        <p>
+          I have hands-on experience in ERP systems, MS Excel, invoice management, reconciliation, and preparing monthly MIS reports. I am passionate about delivering accurate financial operations and supporting business growth through efficient accounting practices.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+
+    <div class="skills">
+      <div class="skill-card">
+        <h3>Accounting</h3>
+        <p>Journal Entries, Ledger & Reconciliation</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>GST & TDS</h3>
+        <p>GST Return Filing & TDS Compliance</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Payroll</h3>
+        <p>Salary Processing & Payroll Management</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>MS Excel</h3>
+        <p>Advanced Excel & Reporting</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>ERP Systems</h3>
+        <p>Oracle ERP & Financial Operations</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>MIS Reporting</h3>
+        <p>Monthly & Quarterly Financial Reports</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-box">
+      <div class="counter" id="counter">0</div>
+      <h3>Years of Experience</h3>
+
+      <br>
+
+      <p>
+        Working as an Accounts and Finance Executive with expertise in finance operations, taxation, compliance, payroll, and reporting.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact">
+      <p>If you'd like to connect for professional opportunities, feel free to contact me.</p>
+
+      <br>
+
+      <button onclick="showMessage()">Say Hello</button>
+
+      <p id="message" style="margin-top:20px; font-weight:bold;"></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Gaurav Gole | Portfolio Website</p>
+  </footer>
+
+  <script>
+    // Experience Counter Animation
+    let count = 0;
+    let target = 4;
+    let counter = document.getElementById("counter");
+
+    let interval = setInterval(() => {
+      count++;
+      counter.innerText = count + "+";
+      
+      if(count >= target) {
+        clearInterval(interval);
+      }
+    }, 500);
+
+    // Contact Button Message
+    function showMessage() {
+      document.getElementById("message").innerText =
+        "Thank you for visiting my portfolio!";
+    }
+  </script>
+
+</body>
 </html>

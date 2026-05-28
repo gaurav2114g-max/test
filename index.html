@@ -2,320 +2,486 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gaurav Gole | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav | Portfolio</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
       font-family: Arial, sans-serif;
+      scroll-behavior:smooth;
     }
 
-    body {
-      background: #f4f7fb;
-      color: #333;
-      line-height: 1.6;
+    body{
+      background:#f5f7fb;
+      color:#333;
     }
 
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    header{
+      height:100vh;
+      background:linear-gradient(135deg,#0f172a,#1e3a8a);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
     }
 
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+    .hero h1{
+      font-size:60px;
+      margin-bottom:15px;
+      animation:slideDown 1s ease;
     }
 
-    header p {
-      font-size: 20px;
-      opacity: 0.9;
+    .hero h2{
+      font-size:28px;
+      font-weight:normal;
+      color:#cbd5e1;
+      margin-bottom:20px;
     }
 
-    nav {
-      background: #fff;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .hero p{
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      font-size:18px;
     }
 
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #1e3c72;
-      font-weight: bold;
-      transition: 0.3s;
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 30px;
+      background:#f59e0b;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:0.3s;
     }
 
-    nav a:hover {
-      color: #ff9800;
+    .btn:hover{
+      background:#ffb703;
+      transform:translateY(-3px);
     }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+    nav{
+      position:sticky;
+      top:0;
+      background:white;
+      padding:18px;
+      text-align:center;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      z-index:1000;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 32px;
-      color: #1e3c72;
-      position: relative;
+    nav a{
+      text-decoration:none;
+      margin:0 18px;
+      color:#1e3a8a;
+      font-weight:bold;
+      transition:0.3s;
     }
 
-    .section-title::after {
-      content: "";
-      width: 80px;
-      height: 4px;
-      background: #ff9800;
-      display: block;
-      margin: 10px auto;
-      border-radius: 10px;
+    nav a:hover{
+      color:#f59e0b;
     }
 
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 40px;
-      align-items: center;
+    section{
+      padding:80px 10%;
     }
 
-    .profile-box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    .title{
+      text-align:center;
+      margin-bottom:50px;
     }
 
-    .profile-box img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 5px solid #1e3c72;
+    .title h2{
+      font-size:38px;
+      color:#1e3a8a;
+      margin-bottom:10px;
     }
 
-    .about-text {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    .title p{
+      color:#666;
     }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+    .about-container{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:40px;
+      align-items:center;
     }
 
-    .skill-card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: 0.3s;
+    .profile-card{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
     }
 
-    .skill-card:hover {
-      transform: translateY(-8px);
+    .profile-card img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:5px solid #1e3a8a;
+      margin-bottom:20px;
     }
 
-    .skill-card h3 {
-      color: #1e3c72;
-      margin-bottom: 10px;
+    .profile-card h3{
+      font-size:28px;
+      color:#1e3a8a;
     }
 
-    .experience-box {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
+    .profile-card p{
+      margin-top:10px;
+      color:#666;
     }
 
-    .counter {
-      font-size: 60px;
-      color: #ff9800;
-      font-weight: bold;
+    .about-text{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
     }
 
-    .contact {
-      text-align: center;
+    .about-text p{
+      margin-bottom:20px;
+      line-height:1.8;
     }
 
-    .contact button {
-      background: #1e3c72;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
     }
 
-    .contact button:hover {
-      background: #ff9800;
+    .skill-box{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      transition:0.3s;
     }
 
-    footer {
-      background: #1e3c72;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
+    .skill-box:hover{
+      transform:translateY(-10px);
     }
 
-    @media(max-width: 768px) {
-      .about {
-        grid-template-columns: 1fr;
+    .skill-box h3{
+      color:#1e3a8a;
+      margin-bottom:15px;
+    }
+
+    .experience{
+      text-align:center;
+      background:#1e3a8a;
+      color:white;
+      border-radius:20px;
+      padding:50px;
+    }
+
+    .counter{
+      font-size:80px;
+      color:#fbbf24;
+      font-weight:bold;
+    }
+
+    .timeline{
+      display:grid;
+      gap:25px;
+    }
+
+    .job{
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .job h3{
+      color:#1e3a8a;
+      margin-bottom:10px;
+    }
+
+    .job span{
+      color:#f59e0b;
+      font-weight:bold;
+    }
+
+    .contact{
+      text-align:center;
+      background:white;
+      padding:50px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .contact p{
+      margin:15px 0;
+      font-size:18px;
+    }
+
+    footer{
+      background:#0f172a;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    @keyframes slideDown{
+      from{
+        opacity:0;
+        transform:translateY(-50px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:40px;
       }
 
-      header h1 {
-        font-size: 36px;
+      .hero h2{
+        font-size:22px;
       }
+
+      .about-container{
+        grid-template-columns:1fr;
+      }
+
+      nav a{
+        display:inline-block;
+        margin:10px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1>Gaurav Gole</h1>
-    <p>Accounts and Finance Executive</p>
+    <div class="hero">
+      <h1>Gaurav</h1>
+      <h2>Accounts & Finance Executive</h2>
+
+      <p>
+        Experienced accounting professional with expertise in GST, TDS, payroll,
+        financial reporting, reconciliation, ERP systems, and finance operations.
+      </p>
+
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
   </header>
 
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
+    <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
-    <h2 class="section-title">About Me</h2>
 
-    <div class="about">
-      <div class="profile-box">
-        <img src="https://via.placeholder.com/150" alt="Profile Image">
-        <h3>Gaurav Gole</h3>
-        <p>Finance Professional</p>
+    <div class="title">
+      <h2>About Me</h2>
+      <p>Professional Summary</p>
+    </div>
+
+    <div class="about-container">
+
+      <div class="profile-card">
+        <img src="https://via.placeholder.com/180" alt="Profile Image">
+
+        <h3>Gaurav</h3>
+
+        <p>
+          Accounts & Finance Executive
+        </p>
       </div>
 
       <div class="about-text">
-        <p>
-          I am an experienced Accounts and Finance Executive with more than 4 years of professional experience in accounting, finance operations, taxation, payroll management, GST filing, TDS compliance, and financial reporting.
-        </p>
-
-        <br>
 
         <p>
-          I have hands-on experience in ERP systems, MS Excel, invoice management, reconciliation, and preparing monthly MIS reports. I am passionate about delivering accurate financial operations and supporting business growth through efficient accounting practices.
+          I am a dedicated Accounts and Finance Executive with 4+ years of experience in accounting, taxation, payroll, and financial operations.
         </p>
+
+        <p>
+          Currently working at Routa Digital India (IT Company), Noida, where I manage journal entries, GST/TDS filing, reconciliation, payroll processing, MIS reporting, invoice management, and financial reporting.
+        </p>
+
+        <p>
+          I also have previous experience working in a CA Firm where I handled day-to-day accounting activities, financial statements, GST return filing, and bookkeeping.
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
   <section id="skills">
-    <h2 class="section-title">My Skills</h2>
 
-    <div class="skills">
-      <div class="skill-card">
+    <div class="title">
+      <h2>My Skills</h2>
+      <p>Professional Expertise</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-box">
         <h3>Accounting</h3>
-        <p>Journal Entries, Ledger & Reconciliation</p>
+        <p>Journal Entries, Ledger & Financial Transactions</p>
       </div>
 
-      <div class="skill-card">
+      <div class="skill-box">
         <h3>GST & TDS</h3>
-        <p>GST Return Filing & TDS Compliance</p>
+        <p>GST Return Filing, TDS Compliance & Payments</p>
       </div>
 
-      <div class="skill-card">
+      <div class="skill-box">
         <h3>Payroll</h3>
         <p>Salary Processing & Payroll Management</p>
       </div>
 
-      <div class="skill-card">
+      <div class="skill-box">
         <h3>MS Excel</h3>
-        <p>Advanced Excel & Reporting</p>
+        <p>Advanced Excel, Reports & Data Management</p>
       </div>
 
-      <div class="skill-card">
-        <h3>ERP Systems</h3>
-        <p>Oracle ERP & Financial Operations</p>
+      <div class="skill-box">
+        <h3>Tally & ERP</h3>
+        <p>Tally ERP, Tally Prime & ZOHO Books</p>
       </div>
 
-      <div class="skill-card">
-        <h3>MIS Reporting</h3>
-        <p>Monthly & Quarterly Financial Reports</p>
+      <div class="skill-box">
+        <h3>Financial Reporting</h3>
+        <p>MIS Reports & Monthly Closings</p>
       </div>
+
     </div>
+
   </section>
 
   <section id="experience">
-    <h2 class="section-title">Experience</h2>
 
-    <div class="experience-box">
+    <div class="title">
+      <h2>Experience</h2>
+      <p>Professional Journey</p>
+    </div>
+
+    <div class="experience">
       <div class="counter" id="counter">0</div>
       <h3>Years of Experience</h3>
-
-      <br>
-
-      <p>
-        Working as an Accounts and Finance Executive with expertise in finance operations, taxation, compliance, payroll, and reporting.
-      </p>
     </div>
+
+  </section>
+
+  <section id="work">
+
+    <div class="title">
+      <h2>Work Experience</h2>
+      <p>Career Timeline</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="job">
+        <h3>Routa Digital India</h3>
+        <span>July 2023 - Present</span>
+
+        <p>
+          Managing accounting operations, GST/TDS filings, reconciliation,
+          payroll, invoice processing, collection review, MIS reports,
+          financial reporting, and client presentations.
+        </p>
+      </div>
+
+      <div class="job">
+        <h3>Sonu Ram And Associates</h3>
+        <span>Oct 2021 - June 2023</span>
+
+        <p>
+          Handled bookkeeping, vouchers, GST/TDS filing,
+          financial statement support, monthly reporting,
+          and day-to-day accounting activities.
+        </p>
+      </div>
+
+    </div>
+
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Contact Me</h2>
+
+    <div class="title">
+      <h2>Contact Me</h2>
+      <p>Let's Connect</p>
+    </div>
 
     <div class="contact">
-      <p>If you'd like to connect for professional opportunities, feel free to contact me.</p>
 
-      <br>
+      <p><strong>Email:</strong> Gaurav2114g@gmail.com</p>
 
-      <button onclick="showMessage()">Say Hello</button>
+      <p><strong>Mobile:</strong> +91 8826788191</p>
 
-      <p id="message" style="margin-top:20px; font-weight:bold;"></p>
+      <p><strong>Location:</strong> Delhi, India</p>
+
+      <button class="btn" onclick="showMessage()">
+        Send Message
+      </button>
+
+      <p id="message" style="margin-top:20px;font-weight:bold;"></p>
+
     </div>
+
   </section>
 
   <footer>
-    <p>© 2026 Gaurav Gole | Portfolio Website</p>
+    <p>© 2026 Gaurav Portfolio Website</p>
   </footer>
 
   <script>
-    // Experience Counter Animation
+
+    // Experience Counter
+
     let count = 0;
     let target = 4;
+
     let counter = document.getElementById("counter");
 
     let interval = setInterval(() => {
+
       count++;
-      counter.innerText = count + "+";
-      
-      if(count >= target) {
+
+      counter.innerHTML = count + "+";
+
+      if(count >= target){
         clearInterval(interval);
       }
+
     }, 500);
 
-    // Contact Button Message
-    function showMessage() {
-      document.getElementById("message").innerText =
-        "Thank you for visiting my portfolio!";
+    // Button Action
+
+    function showMessage(){
+
+      document.getElementById("message").innerHTML =
+      "Thank you for visiting my portfolio website!";
+
     }
+
   </script>
 
 </body>
